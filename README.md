@@ -15,8 +15,8 @@ https://smil-thakur.github.io/Material-In-Real-Time/
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/material-design-tokens-playground.git
-   cd material-design-tokens-playground
+   git clone https://github.com/smil-thakur/Material-In-Real-Time.git
+   cd Material-In-Real-Time
    ```
 
 2. **Install dependencies (if applicable):**
