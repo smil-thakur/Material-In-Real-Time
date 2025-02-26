@@ -1,59 +1,53 @@
-# MaterialInRealTime
+# Material Design Tokens Playground (Buttons)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+A web-based playground to experiment with and modify Material Design tokens for buttons in real time. This project allows users to tweak various design tokens and see instant updates in the UI.
 
-## Development server
+## 🚀 Features
+- Modify Material Design tokens for buttons dynamically
+- Live preview of button styles as tokens are updated
+- Supports properties like color, elevation, typography, and more
+- User-friendly interface for customization
 
-To start a local development server, run:
+## 🛠️ Installation
 
-```bash
-ng serve
-```
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/material-design-tokens-playground.git
+   cd material-design-tokens-playground
+   ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2. **Install dependencies (if applicable):**
+   ```sh
+   npm install  # or yarn install
+   ```
 
-## Code scaffolding
+3. **Run the project locally:**
+   ```sh
+   npm start  # or yarn start
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+4. Open your browser and visit `http://localhost:3000` (or the specified port).
 
-```bash
-ng generate component component-name
-```
+## 🎨 Customization
+Modify the Material Design tokens for buttons in the UI. The supported tokens include:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Container Properties**: Shape, Color, Elevation
+- **Typography**: Font, Size, Weight, Tracking
+- **State Effects**: Hover, Focus, Pressed
+- **Disabled States**: Background, Foreground
 
-```bash
-ng generate --help
-```
+## 📌 Roadmap
+- [x] Button customization
+- [ ] Support for other Material Design components (FABs, TextFields, etc.)
+- [ ] Export and save custom themes
+- [ ] Dark mode support
 
-## Building
+## 🤝 Contributing
+Feel free to fork this repo and submit pull requests! If you have ideas, create an issue to discuss.
 
-To build the project run:
+## 📜 License
+This project is licensed under the MIT License.
 
-```bash
-ng build
-```
+---
+Made with ❤️ by [Smil Raj Thakur](https://github.com/smil-thakur)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
