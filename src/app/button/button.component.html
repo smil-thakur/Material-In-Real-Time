@@ -1,0 +1,91 @@
+<div class="main-title">
+    <h1>Buttons</h1>
+</div>
+<div class="main-container">
+
+    <h2>Select button type</h2>
+
+
+    <mat-form-field>
+        <mat-label>
+            Buttons
+        </mat-label>
+        <mat-select [formControl]="buttonFormControl">
+            @for (button of buttons; track button.type){
+            <mat-option [value]="button.type">
+                {{button.type}}
+            </mat-option>
+            }
+        </mat-select>
+        @if (buttonFormControl.hasError('required')) {
+        <mat-error>You must choose a button to start designing</mat-error>
+        }
+    </mat-form-field>
+
+    <div class="mt-50">
+
+    </div>
+
+    @if( buttonFormControl.value === buttonTypes.BASIC){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.BASIC)}}</div>
+    <div class="mt-20"></div>
+    <button class="basic-button" mat-button>Hello World!</button>
+    }
+    @if( buttonFormControl.value === buttonTypes.RAISED){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.RAISED)}}</div>
+    <div class="mt-20"></div>
+    <button mat-raised-button>Hello World!</button>
+    }
+    @if( buttonFormControl.value === buttonTypes.STROKED){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.STROKED)}}</div>
+    <div class="mt-20"></div>
+    <button mat-stroked-button>Hello World!</button>
+    }
+    @if( buttonFormControl.value === buttonTypes.FLAT){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.FLAT)}}</div>
+    <div class="mt-20"></div>
+    <button mat-flat-button>Hello World!</button>
+    }
+    @if( buttonFormControl.value === buttonTypes.ICON){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.ICON)}}</div>
+    <div class="mt-20"></div>
+    <button mat-icon-button>
+        <mat-icon fontIcon="favorite">
+        </mat-icon>
+    </button>
+    }
+    @if( buttonFormControl.value === buttonTypes.FAB){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.FAB)}}</div>
+    <div class="mt-20"></div>
+    <button mat-fab>
+        <mat-icon fontIcon="favorite">
+        </mat-icon>
+    </button>
+    }
+    @if( buttonFormControl.value === buttonTypes.MINIFAB){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.MINIFAB)}}</div>
+    <div class="mt-20"></div>
+    <button mat-mini-fab>
+        <mat-icon fontIcon="favorite">
+        </mat-icon>
+    </button>
+    }
+    @if( buttonFormControl.value === buttonTypes.ExtendedFAB){
+    <div class="hint-text">{{getButtonDesc(buttonTypes.ExtendedFAB)}}</div>
+    <div class="mt-20"></div>
+    <button mat-fab extended>
+        <mat-icon fontIcon="favorite">
+        </mat-icon>
+        Like
+    </button>
+    }
+    @if( buttonFormControl.value !== ""){
+    <div class="design-pad mt-50">
+        <ngs-code-editor [readOnly]="true" [codeModel]="BtnModelFixed"></ngs-code-editor>
+    </div>
+    <div class="design-pad">
+        <ngs-code-editor (codeModelChanged)="onCodeModelChange($event)" [theme]="theme" [codeModel]="basicBtnModel"
+            [options]="options" (valueChanged)="onCodeChanged($event)"></ngs-code-editor>
+    </div>
+    }
+</div>

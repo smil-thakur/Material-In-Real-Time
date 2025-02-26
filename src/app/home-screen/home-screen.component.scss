@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; // Light background color
+  min-height: 100vh;
+  padding: 20px;
+
+  .main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .welcome-title,
+    .title {
+      font-weight: bold;
+      text-align: center;
+      color: #333333; // Darker text color for contrast
+    }
+
+    .welcome-title {
+      font-size: 40px; // Slightly smaller font size for elegance
+    }
+
+    .title {
+      font-size: 70px; // Slightly smaller font size for elegance
+    }
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px; // Limit the maximum width for better layout
+    margin-top: 20px;
+  }
+
+  .components-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .component-card {
+    width: 200px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #666666;
+    cursor: not-allowed; // Default to disabled state
+
+    &.enabled {
+      cursor: pointer; // Change cursor for enabled state
+      color: #333333;
+    }
+
+    .component-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .component-description {
+      font-size: 14px;
+      color: #888888;
+    }
+  }
+
+  .content-section {
+    flex: 1;
+    margin: 0 10px; // Add margin between cards
+    background-color: #ffffff; // White background for sections
+    padding: 20px; // Increased padding for better spacing
+    border-radius: 10px; // Slightly larger border radius
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Softer box shadow
+
+    .section-title {
+      font-weight: bold;
+      font-size: 28px; // Slightly smaller font size for elegance
+      margin-bottom: 10px;
+      color: #555555; // Medium text color for titles
+    }
+
+    .section-content {
+      margin-bottom: 10px;
+      color: #666666; // Medium text color for content
+    }
+  }
+}

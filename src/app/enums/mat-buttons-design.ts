@@ -1,73 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@use "@angular/material" as mat;
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  .main-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1 {
-      font-size: 50px;
-    }
-  }
-  .main-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-  }
-  .hint-text {
-    font-size: 12px;
-    color: #666666;
-  }
-  .mt-50 {
-    margin-top: 50px;
-  }
-  .mt-10 {
-    margin-top: 10px;
-  }
-  .mt-20 {
-    margin-top: 20px;
-  }
-  .design-pad {
-    background-color: #f5f5f5;
-    min-height: 200px;
-    min-width: 650px;
-    padding: 12px;
-    border-radius: 12px;
-  }
-}
-
-//basic button variables
-:root {
-  --text-container-shape: 12px;
-  --text-label-text-color: #ba005c;
-  --text-disabled-label-text-color: #a0a0a0;
-  --text-label-text-font: Arial;
-  --text-label-text-size: 16px;
-  --text-label-text-tracking: 0.05em;
-  --text-label-text-weight: 400;
-  --text-label-text-transform: none;
-  --text-container-height: 40px;
-  --text-horizontal-padding: 12px;
-  --text-with-icon-horizontal-padding: 12px;
-  --text-icon-spacing: 5px;
-  --text-icon-offset: 5px;
-  --text-state-layer-color: #ba005c;
-  --text-disabled-state-layer-color: #a0a0a0;
-  --text-ripple-color: #ba005c;
-  --text-hover-state-layer-opacity: 0.08;
-  --text-focus-state-layer-opacity: 0.12;
-  --text-pressed-state-layer-opacity: 0.16;
-  --text-touch-target-display: 48px;
-}
-
-@include mat.button-overrides(
+export enum basic_mat_button_fix_design {
+  BASIC = `@include mat.button-overrides(
   (
     text-container-shape: var(--text-container-shape),
     text-label-text-color: var(--text-label-text-color),
@@ -90,38 +22,8 @@ body {
     text-pressed-state-layer-opacity: var(--text-pressed-state-layer-opacity),
     text-touch-target-display: var(--text-touch-target-display),
   )
-);
-
-// Protected button variables
-:root {
-  --protected-container-shape: 8px;
-  --protected-container-elevation-shadow: none;
-  --protected-disabled-container-elevation-shadow: none;
-  --protected-focus-container-elevation-shadow: none;
-  --protected-hover-container-elevation-shadow: none;
-  --protected-pressed-container-elevation-shadow: none;
-  --protected-container-color: #f5f5f5;
-  --protected-label-text-color: #007acc;
-  --protected-disabled-container-color: #d0d0d0;
-  --protected-disabled-label-text-color: #808080;
-  --protected-label-text-font: "Roboto", sans-serif;
-  --protected-label-text-size: 14px;
-  --protected-label-text-tracking: 0.04em;
-  --protected-label-text-weight: 500;
-  --protected-label-text-transform: uppercase;
-  --protected-container-height: 48px;
-  --protected-horizontal-padding: 16px;
-  --protected-icon-spacing: 8px;
-  --protected-icon-offset: 4px;
-  --protected-state-layer-color: #0055aa;
-  --protected-disabled-state-layer-color: #a5a5a5;
-  --protected-ripple-color: #003366;
-  --protected-hover-state-layer-opacity: 0.08;
-  --protected-focus-state-layer-opacity: 0.12;
-  --protected-pressed-state-layer-opacity: 0.16;
-}
-
-@include mat.button-overrides(
+);`,
+  RAISED = `@include mat.button-overrides(
   (
     protected-container-shape: var(--protected-container-shape),
     protected-container-elevation-shadow:
@@ -160,34 +62,10 @@ body {
     protected-pressed-state-layer-opacity:
       var(--protected-pressed-state-layer-opacity),
   )
-);
+);`,
 
-// Outlined button variables
-:root {
-  --outlined-outline-width: 2px;
-  --outlined-container-shape: 8px;
-  --outlined-disabled-outline-color: #a5a5a5;
-  --outlined-disabled-label-text-color: #808080;
-  --outlined-label-text-color: #007acc;
-  --outlined-outline-color: #0055aa;
-  --outlined-label-text-font: "Roboto", sans-serif;
-  --outlined-label-text-size: 14px;
-  --outlined-label-text-tracking: 0.04em;
-  --outlined-label-text-weight: 500;
-  --outlined-label-text-transform: uppercase;
-  --outlined-container-height: 48px;
-  --outlined-horizontal-padding: 16px;
-  --outlined-icon-spacing: 8px;
-  --outlined-icon-offset: 4px;
-  --outlined-state-layer-color: #0055aa;
-  --outlined-disabled-state-layer-color: #a5a5a5;
-  --outlined-ripple-color: #003366;
-  --outlined-hover-state-layer-opacity: 0.08;
-  --outlined-focus-state-layer-opacity: 0.12;
-  --outlined-pressed-state-layer-opacity: 0.16;
-}
-
-@include mat.button-overrides(
+  STROKED = `
+  @include mat.button-overrides(
   (
     outlined-outline-width: var(--outlined-outline-width),
     outlined-container-shape: var(--outlined-container-shape),
@@ -217,32 +95,8 @@ body {
       var(--outlined-pressed-state-layer-opacity),
   )
 );
-
-// Filled button variables
-:root {
-  --filled-container-shape: 8px;
-  --filled-container-color: #007acc;
-  --filled-label-text-color: #ffffff;
-  --filled-disabled-container-color: #d0d0d0;
-  --filled-disabled-label-text-color: #808080;
-  --filled-label-text-font: "Roboto", sans-serif;
-  --filled-label-text-size: 14px;
-  --filled-label-text-tracking: 0.04em;
-  --filled-label-text-weight: 500;
-  --filled-label-text-transform: uppercase;
-  --filled-container-height: 48px;
-  --filled-horizontal-padding: 16px;
-  --filled-icon-spacing: 8px;
-  --filled-icon-offset: 4px;
-  --filled-state-layer-color: #ffffff;
-  --filled-disabled-state-layer-color: #a5a5a5;
-  --filled-ripple-color: #ffffff;
-  --filled-hover-state-layer-opacity: 0.08;
-  --filled-focus-state-layer-opacity: 0.12;
-  --filled-pressed-state-layer-opacity: 0.16;
-}
-
-@include mat.button-overrides(
+`,
+  FLAT = `@include mat.button-overrides(
   (
     filled-container-shape: var(--filled-container-shape),
     filled-container-color: var(--filled-container-color),
@@ -266,21 +120,9 @@ body {
     filled-pressed-state-layer-opacity:
       var(--filled-pressed-state-layer-opacity),
   )
-);
-// Icon variables
-:root {
-  --icon-size: 24px;
-  --icon-color: #5f6368;
-  --disabled-icon-color: #a5a5a5;
-  --state-layer-size: 32px;
-  --state-layer-color: #5f6368;
-  --disabled-state-layer-color: #a5a5a5;
-  --ripple-color: #5f6368;
-  --hover-state-layer-opacity: 0.08;
-  --focus-state-layer-opacity: 0.12;
-  --pressed-state-layer-opacity: 0.16;
-}
+);`,
 
+  ICON = `
 @include mat.icon-button-overrides(
   (
     icon-size: var(--icon-size),
@@ -295,70 +137,9 @@ body {
     pressed-state-layer-opacity: var(--pressed-state-layer-opacity),
   )
 );
+`,
 
-// Mini FAB, FAB, and Extended FAB variables
-:root {
-  /* General FAB */
-  --fab-container-shape: 50%;
-  --fab-container-elevation-shadow: none;
-  --fab-focus-container-elevation-shadow: none;
-  --fab-hover-container-elevation-shadow: none;
-  --fab-pressed-container-elevation-shadow: none;
-  --fab-container-color: #6200ea;
-  --fab-foreground-color: #ffffff;
-  --fab-state-layer-color: #ffffff;
-  --fab-disabled-state-container-color: #bdbdbd;
-  --fab-disabled-state-foreground-color: #757575;
-  --fab-disabled-state-layer-color: none;
-  --fab-ripple-color: #ffffff;
-  --fab-hover-state-layer-opacity: 0.08;
-  --fab-focus-state-layer-opacity: 0.12;
-  --fab-pressed-state-layer-opacity: 0.16;
-  --fab-touch-target-display: 56px;
-
-  /* Small FAB */
-  --small-fab-container-shape: 50%;
-  --small-fab-container-elevation-shadow: none;
-  --small-fab-focus-container-elevation-shadow: none;
-  --small-fab-hover-container-elevation-shadow: none;
-  --small-fab-pressed-container-elevation-shadow: none;
-  --small-fab-container-color: #6200ea;
-  --small-fab-foreground-color: #ffffff;
-  --small-fab-state-layer-color: #ffffff;
-  --small-fab-disabled-state-container-color: #bdbdbd;
-  --small-fab-disabled-state-foreground-color: #757575;
-  --small-fab-disabled-state-layer-color: none;
-  --small-fab-ripple-color: #ffffff;
-  --small-fab-hover-state-layer-opacity: 0.08;
-  --small-fab-focus-state-layer-opacity: 0.12;
-  --small-fab-pressed-state-layer-opacity: 0.16;
-  --small-fab-touch-target-display: 40px;
-
-  /* Extended FAB */
-  --extended-fab-container-shape: 28px;
-  --extended-fab-container-elevation-shadow: none;
-  --extended-fab-focus-container-elevation-shadow: none;
-  --extended-fab-hover-container-elevation-shadow: none;
-  --extended-fab-pressed-container-elevation-shadow: none;
-  --extended-fab-container-color: #6200ea;
-  --extended-fab-foreground-color: #ffffff;
-  --extended-fab-state-layer-color: #ffffff;
-  --extended-fab-disabled-state-container-color: #bdbdbd;
-  --extended-fab-disabled-state-foreground-color: #757575;
-  --extended-fab-disabled-state-layer-color: none;
-  --extended-fab-ripple-color: #ffffff;
-  --extended-fab-hover-state-layer-opacity: 0.08;
-  --extended-fab-focus-state-layer-opacity: 0.12;
-  --extended-fab-pressed-state-layer-opacity: 0.16;
-  --extended-fab-touch-target-display: 48px;
-  --extended-fab-label-text-font: "Roboto", sans-serif;
-  --extended-fab-label-text-size: 14px;
-  --extended-fab-label-text-tracking: 0.04em;
-  --extended-fab-label-text-weight: 500;
-}
-
-//general fab overrides
-
+  FAB = `
 @include mat.fab-overrides(
   (
     container-shape: var(--fab-container-shape),
@@ -382,10 +163,8 @@ body {
     touch-target-display: var(--fab-touch-target-display),
   )
 );
-
-//small fab overrides
-
-@include mat.fab-overrides(
+`,
+  MINIFAB = `@include mat.fab-overrides(
   (
     small-container-shape: var(--small-fab-container-shape),
     small-container-elevation-shadow:
@@ -413,10 +192,8 @@ body {
     small-touch-target-display: var(--small-fab-touch-target-display),
   )
 );
-
-//extended fab overrides
-
-@include mat.fab-overrides(
+`,
+  ExtendedFAB = `@include mat.fab-overrides(
   (
     extended-container-shape: var(--extended-fab-container-shape),
     extended-container-elevation-shadow:
@@ -446,3 +223,6 @@ body {
     extended-label-text-weight: var(--extended-fab-label-text-weight),
   )
 );
+`
+
+}
